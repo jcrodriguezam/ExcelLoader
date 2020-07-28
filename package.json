@@ -1,16 +1,26 @@
 {
-  "name": "react-redux-firebase-authentication",
+  "name": "origin",
   "version": "0.2.0",
   "private": true,
   "dependencies": {
+    "@fluentui/react": "^7.123.9",
+    "@types/jest": "24.0.12",
+    "@types/node": "11.13.8",
+    "@types/react": "16.8.15",
+    "@types/react-dom": "16.8.4",
+    "@types/react-redux": "^7.1.9",
+    "@types/react-router-dom": "^5.1.5",
+    "@uifabric/fluent-theme": "^0.16.7",
     "firebase": "^7.17.1",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "office-ui-fabric-react": "^6.174.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-redux": "^5.1.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.1",
+    "react-scripts": "^3.4.1",
     "recompose": "^0.30.0",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "typescript": "^3.8.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -18,10 +28,19 @@
     "test": "react-scripts test --env=jsdom --passWithNoTests",
     "eject": "react-scripts eject"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

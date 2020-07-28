@@ -9,10 +9,26 @@ import store from './store';
 import App from './components/App';
 import Firebase, { FirebaseContext } from './components/Firebase';
 
+import { FluentCustomizations } from '@uifabric/fluent-theme';
+import { Customizer, mergeStyles } from 'office-ui-fabric-react';
+
+// Inject some global styles
+mergeStyles({
+  selectors: {
+    ':global(body), :global(html), :global(#root)': {
+      margin: 0,
+      padding: 0,
+      height: '100vh'
+    }
+  }
+});
+
 ReactDOM.render(
   <Provider store={store}>
     <FirebaseContext.Provider value={new Firebase()}>
-      <App />
+      <Customizer {...FluentCustomizations}>
+        <App />∫
+      </Customizer>,
     </FirebaseContext.Provider>
   </Provider>,
   document.getElementById('root'),
