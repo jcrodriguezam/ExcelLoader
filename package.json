@@ -10,16 +10,18 @@
     "@types/react-dom": "16.8.4",
     "@types/react-redux": "^7.1.9",
     "@types/react-router-dom": "^5.1.5",
+    "@types/recompose": "^0.30.7",
     "@uifabric/fluent-theme": "^0.16.7",
     "firebase": "^7.17.1",
     "office-ui-fabric-react": "^6.174.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^5.1.1",
-    "react-router-dom": "^4.3.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.1",
     "recompose": "^0.30.0",
     "redux": "^4.0.1",
+    "styled-components": "^5.1.1",
     "typescript": "^3.9.7"
   },
   "scripts": {
@@ -42,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-social-icons": "^4.1.0"
   }
 }

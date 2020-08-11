@@ -1,9 +1,12 @@
 import React from 'react';
+import Background from '../Utils/Background';
+
+const image = 'assets/bg-4.jpg';
 
 const Landing = () => (
-  <div>
+  <Background src={image}>
     <h1>Landing</h1>
-  </div>
+  </Background>
 );
 
 export default Landing;

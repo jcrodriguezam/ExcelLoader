@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
+import { Text } from 'office-ui-fabric-react/lib/Text';
+import { Link } from 'office-ui-fabric-react/lib/Link';
 
 const SignUpPage = () => (
   <div>
@@ -148,9 +150,9 @@ class SignUpFormBase extends Component {
 }
 
 const SignUpLink = () => (
-  <p>
-    Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
-  </p>
+  <Text>
+    ¿No tienes cuenta? <Link to={ROUTES.SIGN_UP}>Registrate</Link>
+  </Text>
 );
 
 const SignUpForm = withRouter(withFirebase(SignUpFormBase));

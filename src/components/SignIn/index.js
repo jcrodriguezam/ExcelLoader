@@ -6,17 +6,60 @@ import { SignUpLink } from '../SignUp';
 import { PasswordForgetLink } from '../PasswordForget';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+import Background from '../Utils/Background';
+import { SocialIcon } from 'react-social-icons';
+
+import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
+import { Text } from 'office-ui-fabric-react/lib/Text';
+import { TextField } from 'office-ui-fabric-react/lib/TextField';
+import { PrimaryButton } from 'office-ui-fabric-react';
+
+initializeIcons();
+
+const image = 'assets/bg-4.jpg';
+const socialIconStyle = { height: 30, width: 30, display: 'flex', cursor: 'pointer' };
+
+const SignInWraper = (props) => {
+  return(
+    <div style={{
+      width: '250px',
+      height: '330px',
+      backgroundColor: 'rgba(255,255,255,.9)',
+      display: 'flex',
+      margin: 'auto',
+      boxShadow: '0px 0px 15px rgba(0,0,0,.2)',
+      flexFlow: 'column',
+      position: 'relative',
+      overflow: 'hidden',
+      padding: '1em',
+      marginTop: '10%',
+      borderRadius: '3px'
+    }}>
+      {props.children}
+    </div>
+  );
+}
 
 const SignInPage = () => (
-  <div>
-    <h1>SignIn</h1>
-    <SignInForm />
-    <SignInGoogle />
-    <SignInFacebook />
-    <SignInTwitter />
-    <PasswordForgetLink />
-    <SignUpLink />
-  </div>
+  <Background src={image}>
+    <SignInWraper>
+      <Text variant="xLarge"><b>Iniciar sesión</b></Text>
+      <br />
+      <SignInForm />
+      <div style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        margin: '2em auto',
+        width: '130px',
+      }}>
+        <SignInGoogle />
+        <SignInFacebook />
+        <SignInTwitter />
+      </div>
+      <PasswordForgetLink />
+      <SignUpLink />
+    </SignInWraper>
+  </Background>
 );
 
 const INITIAL_STATE = {
@@ -69,24 +112,30 @@ class SignInFormBase extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <input
+        <TextField 
+          placeholder="Email"
           name="email"
           value={email}
           onChange={this.onChange}
           type="text"
-          placeholder="Email Address"
+          style={{marginBottom: '.3em'}}
         />
-        <input
+        <br />
+        <TextField
           name="password"
           value={password}
           onChange={this.onChange}
           type="password"
-          placeholder="Password"
+          placeholder="Contraseña"
         />
-        <button disabled={isInvalid} type="submit">
-          Sign In
-        </button>
-
+        <br />
+        <PrimaryButton 
+          text="Iniciar" 
+          allowDisabledFocus 
+          disabled={isInvalid} 
+          type="submit"
+          style={{margin: 'auto'}}
+        />
         {error && <p>{error.message}</p>}
       </form>
     );
@@ -131,8 +180,7 @@ class SignInGoogleBase extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <button type="submit">Sign In with Google</button>
-
+        <SocialIcon network="google" style={socialIconStyle} onClick={this.onSubmit} />
         {error && <p>{error.message}</p>}
       </form>
     );
@@ -177,8 +225,7 @@ class SignInFacebookBase extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <button type="submit">Sign In with Facebook</button>
-
+        <SocialIcon network="facebook" style={socialIconStyle} onClick={this.onSubmit} />
         {error && <p>{error.message}</p>}
       </form>
     );
@@ -223,8 +270,7 @@ class SignInTwitterBase extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <button type="submit">Sign In with Twitter</button>
-
+        <SocialIcon network="twitter" style={socialIconStyle} onClick={this.onSubmit} />
         {error && <p>{error.message}</p>}
       </form>
     );

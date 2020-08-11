@@ -8,7 +8,7 @@ import MessageList from './MessageList';
 class Messages extends Component {
   constructor(props) {
     super(props);
-
+console.log('props', props)
     this.state = {
       text: '',
       loading: false,
@@ -91,7 +91,8 @@ class Messages extends Component {
           </button>
         )}
 
-        {loading && <div>Loading ...</div>}
+        {loading && <div>
+        {this.state.loading ? 'Cargando ...' : '' }</div>}
 
         {messages && (
           <MessageList

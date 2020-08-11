@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
+import { Text } from 'office-ui-fabric-react/lib/Text';
+import { Link } from 'office-ui-fabric-react/lib/Link';
 
 const PasswordForgetPage = () => (
   <div>
@@ -67,9 +68,9 @@ class PasswordForgetFormBase extends Component {
 }
 
 const PasswordForgetLink = () => (
-  <p>
-    <Link to={ROUTES.PASSWORD_FORGET}>Forgot Password?</Link>
-  </p>
+  <Text style={{marginBottom: '.3em'}}>
+    <Link to={ROUTES.PASSWORD_FORGET}>He olvidado mi contraseña</Link>
+  </Text>
 );
 
 export default PasswordForgetPage;
