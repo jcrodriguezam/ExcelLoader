@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { compose } from 'recompose';
 
 import { withFirebase } from '../Firebase';
-import PersonaList from './PersonaList';
+import PersonaList from './PersonaList.js';
 
 import { Spinner, SpinnerSize } from 'office-ui-fabric-react/lib/Spinner';
 
