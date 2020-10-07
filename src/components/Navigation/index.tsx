@@ -134,6 +134,7 @@ export const NavBasicExample: React.FunctionComponent = () => {
   return (
     <div>
       <br />
+      <p>XXX</p>
       <PersonasList />
     </div>
   );

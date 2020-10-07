@@ -87,14 +87,7 @@ class Personas extends Component {
 
     return (
       <div>
-        {loading && <div>
-        {this.state.loading ?
-          <div>
-            <Spinner size={SpinnerSize.large} label="Cargando personas..." />
-          </div>
-         
-         : '' }</div>}
-
+        {loading && this.state.loading && (<Spinner size={SpinnerSize.large} label="Cargando personas..." />)}
         {personas && (
           <PersonaNameList
             authUser={this.props.authUser}
